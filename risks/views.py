@@ -24,6 +24,18 @@ class RiskAssessmentViewSet(viewsets.ModelViewSet):
     queryset = RiskAssessment.objects.all()
     serializer_class = RiskAssessmentSerializer
 
+class HomeView(APIView):
+    def get(self, request):
+        return Response({
+            "message": "Cybersecurity Risk Tracker API is running 🚀",
+            "endpoints": {
+                "assets": "/api/assets/",
+                "vulnerabilities": "/api/vulnerabilities/",
+                "risks": "/api/risks/",
+                "dashboard": "/api/dashboard/"
+            }
+        })
+
 class DashboardView(APIView):
     def get(self, request):
         # Basic counts
