@@ -61,21 +61,27 @@ python -m venv venv
 Activate it:
 
 # Windows
-```venv\Scripts\activate
+```
+venv\Scripts\activate
 ```
 # Mac/Linux
-```source venv/bin/activate
 ```
+source venv/bin/activate
+```
+
 3️⃣ Install Dependencies
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 
 4️⃣ Apply Migrations
-```python manage.py migrate
+```
+python manage.py migrate
 ```
 
 5️⃣ Run the Server
-```python manage.py runserver
+```
+python manage.py runserver
 ```
 
 Server will run at:
