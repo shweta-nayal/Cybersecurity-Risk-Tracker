@@ -24,6 +24,27 @@ class RiskAssessmentViewSet(viewsets.ModelViewSet):
     queryset = RiskAssessment.objects.all()
     serializer_class = RiskAssessmentSerializer
 
+    def create(self, request, *args, **kwargs):
+        data = request.data.copy()
+
+        likelihood = int(data.get("likelihood", 0))
+        impact = int(data.get("impact", 0))
+
+        # Auto calculate risk score
+        risk_score = likelihood * impact
+
+        data["risk_score"] = risk_score
+
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+
+        return Response({
+            "message": "Risk calculated successfully",
+            "risk_score": risk_score,
+            "data": serializer.data
+        })
+
 class HomeView(APIView):
     def get(self, request):
         return Response({

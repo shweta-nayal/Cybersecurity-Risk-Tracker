@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block home_button %}{% endblock %}
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(135deg, #0b3d91, #021c4a);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        color: white;
+    }
+
+    .wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 40px 50px;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        text-align: center;
+        width: 420px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .btn {
+        display: block;
+        margin: 14px 0;
+        padding: 14px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        transition: 0.3s ease;
+        background: white;
+        color: #0b3d91;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        background: #e8f0ff;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        opacity: 0.85;
+        margin-bottom: 25px;
+    }
+</style>
+
+<div class="wrapper">
+    <div class="card">
+        <h1>Cybersecurity Risk Tracker 🚀</h1>
+        <div class="subtitle">Manage Assets, Vulnerabilities & Risk Assessments</div>
+
+        <a class="btn" href="/api/assets/">Manage Assets</a>
+        <a class="btn" href="/api/vulnerabilities/">Manage Vulnerabilities</a>
+        <a class="btn" href="/api/risks/">Manage Risk Assessments</a>
+        <a class="btn" href="/api/dashboard/">View Dashboard</a>
+    </div>
+</div>
+{% endblock %}

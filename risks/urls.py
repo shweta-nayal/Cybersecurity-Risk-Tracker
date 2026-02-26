@@ -4,7 +4,7 @@ from .views import (
     AssetViewSet,
     VulnerabilityViewSet,
     RiskAssessmentViewSet,
-    DashboardView,
+    DashboardView, HomeView,
 )
 
 router = DefaultRouter()
@@ -13,6 +13,7 @@ router.register(r'vulnerabilities', VulnerabilityViewSet)
 router.register(r'risks', RiskAssessmentViewSet)
 
 urlpatterns = [
+    path('', HomeView.as_view(), name='home'),
     path('', include(router.urls)),
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
 ]

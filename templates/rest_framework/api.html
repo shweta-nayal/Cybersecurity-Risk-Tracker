@@ -1,0 +1,16 @@
+{% extends "rest_framework/base.html" %}
+
+{% block branding %}
+    <a href="/" style="
+        position: fixed;
+        top: 18px;
+        right: 44px;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        z-index: 999;">
+        Back to Home
+    </a>
+    {{ block.super }}
+{% endblock %}
