@@ -61,34 +61,49 @@ python -m venv venv
 Activate it:
 
 # Windows
-venv\Scripts\activate
-
+```venv\Scripts\activate
+```
 # Mac/Linux
-source venv/bin/activate
+```source venv/bin/activate
+```
 3️⃣ Install Dependencies
-pip install -r requirements.txt
+```pip install -r requirements.txt
+```
+
 4️⃣ Apply Migrations
-python manage.py migrate
+```python manage.py migrate
+```
+
 5️⃣ Run the Server
-python manage.py runserver
+```python manage.py runserver
+```
 
 Server will run at:
-
 http://127.0.0.1:8000/
 
-📊 API Endpoints
-Asset APIs
+---
+## API Endpoints
+#### Asset APIs
+```
 GET     /api/assets/
 POST    /api/assets/
 PUT     /api/assets/{id}/
 DELETE  /api/assets/{id}/
-Vulnerability APIs
+```
+
+#### Vulnerability APIs
+```
 GET     /api/vulnerabilities/
 POST    /api/vulnerabilities/
-Risk Assessment APIs
+```
+
+#### Risk Assessment APIs
+```
 GET     /api/risks/
 POST    /api/risks/
-Dashboard API
-GET /api/dashboard/
+```
 
-## 📂 Project Structure
+#### Dashboard API
+```
+GET /api/dashboard/
+```
